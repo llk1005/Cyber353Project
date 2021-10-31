@@ -20,11 +20,14 @@ namespace Cyber_353_Project
         private void LoginBtn_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void SecretMenuBtn_Click(object sender, EventArgs e)
+            // this method is purely for testing purposes, inserts data into the database
+            // if this project were to be released, this method would not be shipped 
         {
-
+           
         }
     }
 }
