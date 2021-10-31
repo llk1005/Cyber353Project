@@ -16,5 +16,10 @@ namespace Cyber_353_Project
         {
             InitializeComponent();
         }
+
+        private void ConnectBtn_Click(object sender, EventArgs e)
+        {
+            RdpClient.Server = DestIPTxtB.Text;
+        }
     }
 }
