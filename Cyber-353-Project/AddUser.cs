@@ -24,7 +24,15 @@ namespace Cyber_353_Project
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
-
+            if (DatabaseManager.AddLoginData(UserNameBox.Text, PasswordBox.Text, RoleBox.Text, "False"))
+            {
+                MessageBox.Show("User added!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: Please try again");
+            }
         }
     }
 }

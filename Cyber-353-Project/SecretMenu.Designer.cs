@@ -51,6 +51,7 @@ namespace Cyber_353_Project
             this.ViewLoginBtn.TabIndex = 1;
             this.ViewLoginBtn.Text = "View Login Database";
             this.ViewLoginBtn.UseVisualStyleBackColor = true;
+            this.ViewLoginBtn.Click += new System.EventHandler(this.ViewLoginBtn_Click);
             // 
             // SecretMenu
             // 
