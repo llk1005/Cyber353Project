@@ -19,7 +19,8 @@ namespace Cyber_353_Project
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
+            RemoteDesktopConnection rdp = new RemoteDesktopConnection();
+            rdp.Show();
 
         }
 

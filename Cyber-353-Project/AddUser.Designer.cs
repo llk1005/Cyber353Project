@@ -195,6 +195,7 @@ namespace Cyber_353_Project
             this.AddUserBtn.TabIndex = 11;
             this.AddUserBtn.Text = "Add User";
             this.AddUserBtn.UseVisualStyleBackColor = true;
+            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
             // RoleBox
             // 

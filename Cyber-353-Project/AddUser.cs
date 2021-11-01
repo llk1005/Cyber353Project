@@ -7,19 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Cyber_353_Project
 {
     public partial class AddUser : Form
     {
+
+        private string connectionString;
+
         public AddUser()
         {
             InitializeComponent();
         }
 
-        private void loginDataBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void AddUserBtn_Click(object sender, EventArgs e)
         {
-            this.Validate();
 
         }
     }
