@@ -100,18 +100,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include=".Designer.resx">
-      <DependentUpon>.Designer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ActivityMonitor.resx">
-      <DependentUpon>ActivityMonitor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginDataView.resx">
       <DependentUpon>LoginDataView.cs</DependentUpon>
     </EmbeddedResource>
