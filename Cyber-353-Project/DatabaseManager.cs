@@ -14,23 +14,31 @@ namespace Cyber_353_Project
         private static string connectionString;
         private static SqlConnection connection;
 
-        public static void InitialConnect()
-        {
-            connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.DatabaseConnectionString"].ConnectionString;
-        }
-
         public static bool AddLoginData(string userName, string password, string role, string accountLocked)
         {
-            using (connection = new SqlConnection())
-            using (SqlDataAdapter adapter = new SqlDataAdapter())
+            connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "INSERT INTO LoginData VALUES (@UserName, @Password, @Role, 'FALSE')";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
+                try
+                {
+                    connection.Open();
 
-                DataTable loginData = new DataTable();
+                    command.Parameters.AddWithValue("@UserName", userName);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@Role", role);
 
-                adapter.Fill(loginData);
+                    command.ExecuteNonQuery();
 
-                return true;
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
     }
