@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Cyber_353_Project
 {
-    public partial class Form1 : Form
+    public partial class LoginWindow : Form
     {
-        public Form1()
+        public LoginWindow()
         {
             InitializeComponent();
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
+            RemoteDesktopConnection rdp = new RemoteDesktopConnection();
+            rdp.Show();
 
         }
 
@@ -27,7 +28,8 @@ namespace Cyber_353_Project
             // this method is purely for testing purposes, inserts data into the database
             // if this project were to be released, this method would not be shipped 
         {
-           
+            SecretMenu secret = new SecretMenu();
+            secret.Show();
         }
     }
 }

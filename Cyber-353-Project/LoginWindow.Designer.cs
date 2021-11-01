@@ -1,7 +1,7 @@
 ﻿
 namespace Cyber_353_Project
 {
-    partial class Form1
+    partial class LoginWindow
     {
         /// <summary>
         /// Required designer variable.

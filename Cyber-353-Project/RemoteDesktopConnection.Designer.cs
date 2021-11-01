@@ -44,58 +44,65 @@ namespace Cyber_353_Project
             // 
             // DestIPTxtB
             // 
-            this.DestIPTxtB.Location = new System.Drawing.Point(183, 60);
+            this.DestIPTxtB.Location = new System.Drawing.Point(137, 49);
+            this.DestIPTxtB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DestIPTxtB.Name = "DestIPTxtB";
-            this.DestIPTxtB.Size = new System.Drawing.Size(100, 22);
+            this.DestIPTxtB.Size = new System.Drawing.Size(76, 20);
             this.DestIPTxtB.TabIndex = 0;
             // 
             // DestUserNameTxtB
             // 
-            this.DestUserNameTxtB.Location = new System.Drawing.Point(183, 88);
+            this.DestUserNameTxtB.Location = new System.Drawing.Point(137, 72);
+            this.DestUserNameTxtB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DestUserNameTxtB.Name = "DestUserNameTxtB";
-            this.DestUserNameTxtB.Size = new System.Drawing.Size(100, 22);
+            this.DestUserNameTxtB.Size = new System.Drawing.Size(76, 20);
             this.DestUserNameTxtB.TabIndex = 1;
             // 
             // DestPassTxtB
             // 
-            this.DestPassTxtB.Location = new System.Drawing.Point(183, 116);
+            this.DestPassTxtB.Location = new System.Drawing.Point(137, 94);
+            this.DestPassTxtB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DestPassTxtB.Name = "DestPassTxtB";
+            this.DestPassTxtB.Size = new System.Drawing.Size(76, 20);
             this.DestPassTxtB.PasswordChar = '*';
-            this.DestPassTxtB.Size = new System.Drawing.Size(100, 22);
             this.DestPassTxtB.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 65);
+            this.label1.Location = new System.Drawing.Point(25, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Destination IP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 91);
+            this.label2.Location = new System.Drawing.Point(25, 74);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 17);
+            this.label2.Size = new System.Drawing.Size(111, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Destination Username";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 116);
+            this.label3.Location = new System.Drawing.Point(25, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 17);
+            this.label3.Size = new System.Drawing.Size(109, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Destination Password";
             // 
             // ConnectBtn
             // 
-            this.ConnectBtn.Location = new System.Drawing.Point(350, 115);
+            this.ConnectBtn.Location = new System.Drawing.Point(262, 93);
+            this.ConnectBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConnectBtn.Name = "ConnectBtn";
-            this.ConnectBtn.Size = new System.Drawing.Size(100, 23);
+            this.ConnectBtn.Size = new System.Drawing.Size(75, 19);
             this.ConnectBtn.TabIndex = 6;
             this.ConnectBtn.Text = "Connect";
             this.ConnectBtn.UseVisualStyleBackColor = true;
@@ -105,6 +112,7 @@ namespace Cyber_353_Project
             // 
             this.RdpClient.Enabled = true;
             this.RdpClient.Location = new System.Drawing.Point(12, 144);
+            this.RdpClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RdpClient.Name = "RdpClient";
             this.RdpClient.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("RdpClient.OcxState")));
             this.RdpClient.Size = new System.Drawing.Size(789, 481);
@@ -112,9 +120,10 @@ namespace Cyber_353_Project
             // 
             // DisconnectBtn
             // 
-            this.DisconnectBtn.Location = new System.Drawing.Point(556, 116);
+            this.DisconnectBtn.Location = new System.Drawing.Point(417, 94);
+            this.DisconnectBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DisconnectBtn.Name = "DisconnectBtn";
-            this.DisconnectBtn.Size = new System.Drawing.Size(90, 23);
+            this.DisconnectBtn.Size = new System.Drawing.Size(68, 19);
             this.DisconnectBtn.TabIndex = 8;
             this.DisconnectBtn.Text = "Disconnect";
             this.DisconnectBtn.UseVisualStyleBackColor = true;
@@ -122,9 +131,9 @@ namespace Cyber_353_Project
             // 
             // RemoteDesktopConnection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 637);
+            this.ClientSize = new System.Drawing.Size(830, 635);
             this.Controls.Add(this.DisconnectBtn);
             this.Controls.Add(this.RdpClient);
             this.Controls.Add(this.ConnectBtn);
@@ -134,6 +143,7 @@ namespace Cyber_353_Project
             this.Controls.Add(this.DestPassTxtB);
             this.Controls.Add(this.DestUserNameTxtB);
             this.Controls.Add(this.DestIPTxtB);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoteDesktopConnection";
             this.Text = "Remote Desktop Connection";
             ((System.ComponentModel.ISupportInitialize)(this.RdpClient)).EndInit();
