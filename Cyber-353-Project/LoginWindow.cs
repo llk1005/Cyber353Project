@@ -17,6 +17,8 @@ namespace Cyber_353_Project
             InitializeComponent();
         }
 
+        // TODO: Add Error message and 2FA
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             RemoteDesktopConnection rdp = new RemoteDesktopConnection();

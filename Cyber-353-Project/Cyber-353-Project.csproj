@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ActivityMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivityMonitor.Designer.cs">
+      <DependentUpon>ActivityMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,8 +103,8 @@
     <EmbeddedResource Include=".Designer.resx">
       <DependentUpon>.Designer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActivityWindow.resx">
-      <DependentUpon>ActivityWindow.cs</DependentUpon>
+    <EmbeddedResource Include="ActivityMonitor.resx">
+      <DependentUpon>ActivityMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
