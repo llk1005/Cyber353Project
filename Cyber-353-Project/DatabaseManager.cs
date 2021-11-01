@@ -14,11 +14,11 @@ namespace Cyber_353_Project
         private static string connectionString;
         private static SqlConnection connection;
 
-        public static bool AddLoginData(string userName, string password, string role, string accountLocked)
+        public static bool AddLoginData(string userName, string password, string role, string name, string email, string phone, string carrier)
         {
             connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
 
-            string query = "INSERT INTO LoginData VALUES (@UserName, @Password, @Role, 'FALSE')";
+            string query = "INSERT INTO LoginData VALUES (@UserName, @Password, @Role, 'FALSE', @Name, @Email, @Phone, @Carrier)";
 
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -30,6 +30,10 @@ namespace Cyber_353_Project
                     command.Parameters.AddWithValue("@UserName", userName);
                     command.Parameters.AddWithValue("@Password", password);
                     command.Parameters.AddWithValue("@Role", role);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Carrier", carrier);
 
                     command.ExecuteNonQuery();
 
@@ -40,6 +44,39 @@ namespace Cyber_353_Project
                     return false;
                 }
             }
+        }
+
+        public static bool checkLoginInfo(string userName, string password)
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "SELECT * FROM LoginData WHERE UserName = @UserName;";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@UserName", userName);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                try
+                {
+                    if (reader[1].ToString() == password)
+                    {
+                        return true;
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+           return false;
         }
     }
 }
