@@ -60,6 +60,7 @@ namespace Cyber_353_Project
             // 
             this.DestPassTxtB.Location = new System.Drawing.Point(183, 116);
             this.DestPassTxtB.Name = "DestPassTxtB";
+            this.DestPassTxtB.PasswordChar = '*';
             this.DestPassTxtB.Size = new System.Drawing.Size(100, 22);
             this.DestPassTxtB.TabIndex = 2;
             // 
@@ -117,6 +118,7 @@ namespace Cyber_353_Project
             this.DisconnectBtn.TabIndex = 8;
             this.DisconnectBtn.Text = "Disconnect";
             this.DisconnectBtn.UseVisualStyleBackColor = true;
+            this.DisconnectBtn.Click += new System.EventHandler(this.DisconnectBtn_Click);
             // 
             // RemoteDesktopConnection
             // 
