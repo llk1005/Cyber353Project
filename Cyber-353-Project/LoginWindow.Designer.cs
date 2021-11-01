@@ -41,18 +41,20 @@ namespace Cyber_353_Project
             // UserTxtBox
             // 
             this.UserTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserTxtBox.Location = new System.Drawing.Point(145, 71);
+            this.UserTxtBox.Location = new System.Drawing.Point(193, 87);
+            this.UserTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserTxtBox.Name = "UserTxtBox";
-            this.UserTxtBox.Size = new System.Drawing.Size(156, 31);
+            this.UserTxtBox.Size = new System.Drawing.Size(207, 37);
             this.UserTxtBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 37);
+            this.label1.Size = new System.Drawing.Size(123, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Login";
             // 
@@ -60,9 +62,10 @@ namespace Cyber_353_Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 74);
+            this.label2.Location = new System.Drawing.Point(19, 91);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 25);
+            this.label2.Size = new System.Drawing.Size(159, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "User Name:";
             // 
@@ -70,26 +73,30 @@ namespace Cyber_353_Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 111);
+            this.label3.Location = new System.Drawing.Point(19, 137);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
+            this.label3.Size = new System.Drawing.Size(142, 31);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
             // 
             // PasswordTxtBox
             // 
             this.PasswordTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTxtBox.Location = new System.Drawing.Point(145, 108);
+            this.PasswordTxtBox.Location = new System.Drawing.Point(193, 133);
+            this.PasswordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordTxtBox.Name = "PasswordTxtBox";
-            this.PasswordTxtBox.Size = new System.Drawing.Size(156, 31);
+            this.PasswordTxtBox.PasswordChar = '*';
+            this.PasswordTxtBox.Size = new System.Drawing.Size(207, 37);
             this.PasswordTxtBox.TabIndex = 3;
             // 
             // LoginBtn
             // 
             this.LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBtn.Location = new System.Drawing.Point(145, 145);
+            this.LoginBtn.Location = new System.Drawing.Point(193, 178);
+            this.LoginBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(156, 49);
+            this.LoginBtn.Size = new System.Drawing.Size(208, 60);
             this.LoginBtn.TabIndex = 5;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = true;
@@ -97,19 +104,20 @@ namespace Cyber_353_Project
             // 
             // SecretMenuBtn
             // 
-            this.SecretMenuBtn.Location = new System.Drawing.Point(357, 164);
+            this.SecretMenuBtn.Location = new System.Drawing.Point(476, 202);
+            this.SecretMenuBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SecretMenuBtn.Name = "SecretMenuBtn";
-            this.SecretMenuBtn.Size = new System.Drawing.Size(131, 23);
+            this.SecretMenuBtn.Size = new System.Drawing.Size(175, 28);
             this.SecretMenuBtn.TabIndex = 6;
             this.SecretMenuBtn.Text = "Secret Menu";
             this.SecretMenuBtn.UseVisualStyleBackColor = true;
             this.SecretMenuBtn.Click += new System.EventHandler(this.SecretMenuBtn_Click);
             // 
-            // Form1
+            // LoginWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 206);
+            this.ClientSize = new System.Drawing.Size(667, 254);
             this.Controls.Add(this.SecretMenuBtn);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.label3);
@@ -117,7 +125,8 @@ namespace Cyber_353_Project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserTxtBox);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "LoginWindow";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

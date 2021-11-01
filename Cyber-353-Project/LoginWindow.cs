@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Cyber_353_Project
 {
@@ -17,9 +18,30 @@ namespace Cyber_353_Project
             InitializeComponent();
         }
 
+        public static String sha256_hash(String password)
+        {
+            StringBuilder sb = new StringBuilder();
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
+
+                foreach (Byte b in result)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+            }
+            return sb.ToString();
+        }
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseManager.checkLoginInfo(UserTxtBox.Text, PasswordTxtBox.Text))
+
+            string encryptedPassword;
+
+            encryptedPassword = sha256_hash(PasswordTxtBox.Text);
+
+            if (DatabaseManager.checkLoginInfo(UserTxtBox.Text, encryptedPassword))
             {
                 MessageBox.Show("Works!");
             }
