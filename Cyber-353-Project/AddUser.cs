@@ -24,7 +24,8 @@ namespace Cyber_353_Project
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseManager.AddLoginData(UserNameBox.Text, PasswordBox.Text, RoleBox.Text, "False"))
+            string carrier = "ATT";
+            if (DatabaseManager.AddLoginData(UserNameBox.Text, PasswordBox.Text, RoleBox.Text, NameBox.Text, EmailBox.Text, PhoneBox.Text, carrier))
             {
                 MessageBox.Show("User added!");
                 this.Close();

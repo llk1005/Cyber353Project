@@ -17,12 +17,16 @@ namespace Cyber_353_Project
             InitializeComponent();
         }
 
-        // TODO: Add Error message and 2FA
-
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            RemoteDesktopConnection rdp = new RemoteDesktopConnection();
-            rdp.Show();
+            if (DatabaseManager.checkLoginInfo(UserTxtBox.Text, PasswordTxtBox.Text))
+            {
+                MessageBox.Show("Works!");
+            }
+            else
+            {
+                MessageBox.Show("Not Working");
+            }
 
         }
 

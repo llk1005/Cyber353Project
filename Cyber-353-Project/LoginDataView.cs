@@ -29,6 +29,26 @@ namespace Cyber_353_Project
         {
             // TODO: This line of code loads data into the 'database1DataSet.LoginData' table. You can move, or remove it, as needed.
             this.loginDataTableAdapter.Fill(this.database1DataSet.LoginData);
+            // TODO: This line of code loads data into the 'database1DataSet.LoginData' table. You can move, or remove it, as needed.
+            this.loginDataTableAdapter.Fill(this.database1DataSet.LoginData);
+            // TODO: This line of code loads data into the 'database1DataSet.LoginData' table. You can move, or remove it, as needed.
+            this.loginDataTableAdapter.Fill(this.database1DataSet.LoginData);
+
+        }
+
+        private void loginDataBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.loginDataBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database1DataSet);
+
+        }
+
+        private void loginDataBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.loginDataBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database1DataSet);
 
         }
     }

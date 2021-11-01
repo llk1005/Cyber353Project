@@ -62,7 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NotificationHandler.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,12 +73,6 @@
     </Compile>
     <Compile Include="LoginDataView.Designer.cs">
       <DependentUpon>LoginDataView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ActivityMonitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ActivityMonitor.Designer.cs">
-      <DependentUpon>ActivityMonitor.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
@@ -112,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActivityMonitor.resx">
       <DependentUpon>ActivityMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDataView.resx">
       <DependentUpon>LoginDataView.cs</DependentUpon>

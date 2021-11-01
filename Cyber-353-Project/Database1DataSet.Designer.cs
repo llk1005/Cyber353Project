@@ -289,6 +289,14 @@ namespace Cyber_353_Project {
             
             private global::System.Data.DataColumn columnAccountLocked;
             
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
+            private global::System.Data.DataColumn columnPhone;
+            
+            private global::System.Data.DataColumn columnCarrier;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoginDataDataTable() {
@@ -364,6 +372,38 @@ namespace Cyber_353_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PhoneColumn {
+                get {
+                    return this.columnPhone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CarrierColumn {
+                get {
+                    return this.columnCarrier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +439,18 @@ namespace Cyber_353_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoginDataRow AddLoginDataRow(string UserName, string Password, string Role, string AccountLocked) {
+            public LoginDataRow AddLoginDataRow(string UserName, string Password, string Role, string AccountLocked, string Name, string Email, string Phone, string Carrier) {
                 LoginDataRow rowLoginDataRow = ((LoginDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         UserName,
                         Password,
                         Role,
-                        AccountLocked};
+                        AccountLocked,
+                        Name,
+                        Email,
+                        Phone,
+                        Carrier};
                 rowLoginDataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoginDataRow);
                 return rowLoginDataRow;
@@ -441,6 +485,10 @@ namespace Cyber_353_Project {
                 this.columnPassword = base.Columns["Password"];
                 this.columnRole = base.Columns["Role"];
                 this.columnAccountLocked = base.Columns["AccountLocked"];
+                this.columnName = base.Columns["Name"];
+                this.columnEmail = base.Columns["Email"];
+                this.columnPhone = base.Columns["Phone"];
+                this.columnCarrier = base.Columns["Carrier"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +504,14 @@ namespace Cyber_353_Project {
                 base.Columns.Add(this.columnRole);
                 this.columnAccountLocked = new global::System.Data.DataColumn("AccountLocked", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccountLocked);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhone);
+                this.columnCarrier = new global::System.Data.DataColumn("Carrier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCarrier);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -472,6 +528,14 @@ namespace Cyber_353_Project {
                 this.columnRole.MaxLength = 50;
                 this.columnAccountLocked.AllowDBNull = false;
                 this.columnAccountLocked.MaxLength = 10;
+                this.columnName.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 50;
+                this.columnPhone.AllowDBNull = false;
+                this.columnPhone.MaxLength = 50;
+                this.columnCarrier.AllowDBNull = false;
+                this.columnCarrier.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -666,6 +730,50 @@ namespace Cyber_353_Project {
                     this[this.tableLoginData.AccountLockedColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    return ((string)(this[this.tableLoginData.NameColumn]));
+                }
+                set {
+                    this[this.tableLoginData.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Email {
+                get {
+                    return ((string)(this[this.tableLoginData.EmailColumn]));
+                }
+                set {
+                    this[this.tableLoginData.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Phone {
+                get {
+                    return ((string)(this[this.tableLoginData.PhoneColumn]));
+                }
+                set {
+                    this[this.tableLoginData.PhoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Carrier {
+                get {
+                    return ((string)(this[this.tableLoginData.CarrierColumn]));
+                }
+                set {
+                    this[this.tableLoginData.CarrierColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -832,42 +940,59 @@ namespace Cyber_353_Project.Database1DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Role", "Role");
             tableMapping.ColumnMappings.Add("AccountLocked", "AccountLocked");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("Phone", "Phone");
+            tableMapping.ColumnMappings.Add("Carrier", "Carrier");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[LoginData] WHERE (([Id] = @Original_Id) AND ([UserName] = @Ori" +
-                "ginal_UserName) AND ([Password] = @Original_Password) AND ([Role] = @Original_Ro" +
-                "le) AND ([AccountLocked] = @Original_AccountLocked))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [LoginData] WHERE (([Id] = @Original_Id) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password) AND ([Role] = @Original_Role) AND ([AccountLocked] = @Original_AccountLocked) AND ([Carrier] = @Original_Carrier) AND ([Email] = @Original_Email) AND ([Name] = @Original_Name) AND ([Phone] = @Original_Phone))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AccountLocked", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AccountLocked", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LoginData] ([UserName], [Password], [Role], [AccountLocked]) V" +
-                "ALUES (@UserName, @Password, @Role, @AccountLocked);\r\nSELECT Id, UserName, Passw" +
-                "ord, Role, AccountLocked FROM LoginData WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [LoginData] ([UserName], [Password], [Role], [AccountLocked], [Carrier], [Email], [Name], [Phone]) VALUES (@UserName, @Password, @Role, @AccountLocked, @Carrier, @Email, @Name, @Phone);
+SELECT Id, UserName, Password, Role, AccountLocked, Carrier, Email, Name, Phone FROM LoginData WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountLocked", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AccountLocked", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[LoginData] SET [UserName] = @UserName, [Password] = @Password, [Role] = @Role, [AccountLocked] = @AccountLocked WHERE (([Id] = @Original_Id) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password) AND ([Role] = @Original_Role) AND ([AccountLocked] = @Original_AccountLocked));
-SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [LoginData] SET [UserName] = @UserName, [Password] = @Password, [Role] = @Role, [AccountLocked] = @AccountLocked, [Carrier] = @Carrier, [Email] = @Email, [Name] = @Name, [Phone] = @Phone WHERE (([Id] = @Original_Id) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password) AND ([Role] = @Original_Role) AND ([AccountLocked] = @Original_AccountLocked) AND ([Carrier] = @Original_Carrier) AND ([Email] = @Original_Email) AND ([Name] = @Original_Name) AND ([Phone] = @Original_Phone));
+SELECT Id, UserName, Password, Role, AccountLocked, Carrier, Email, Name, Phone FROM LoginData WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountLocked", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AccountLocked", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AccountLocked", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AccountLocked", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -884,7 +1009,8 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, UserName, Password, Role, AccountLocked FROM dbo.LoginData";
+            this._commandCollection[0].CommandText = "SELECT Id, UserName, Password, Role, AccountLocked, Carrier, Email, Name, Phone F" +
+                "ROM LoginData";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -945,7 +1071,7 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_UserName, string Original_Password, string Original_Role, string Original_AccountLocked) {
+        public virtual int Delete(int Original_Id, string Original_UserName, string Original_Password, string Original_Role, string Original_AccountLocked, string Original_Carrier, string Original_Email, string Original_Name, string Original_Phone) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_UserName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserName");
@@ -971,6 +1097,30 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_AccountLocked));
             }
+            if ((Original_Carrier == null)) {
+                throw new global::System.ArgumentNullException("Original_Carrier");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Carrier));
+            }
+            if ((Original_Email == null)) {
+                throw new global::System.ArgumentNullException("Original_Email");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Email));
+            }
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Name));
+            }
+            if ((Original_Phone == null)) {
+                throw new global::System.ArgumentNullException("Original_Phone");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Phone));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -991,7 +1141,7 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string UserName, string Password, string Role, string AccountLocked) {
+        public virtual int Insert(string UserName, string Password, string Role, string AccountLocked, string Carrier, string Email, string Name, string Phone) {
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
@@ -1016,6 +1166,30 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(AccountLocked));
             }
+            if ((Carrier == null)) {
+                throw new global::System.ArgumentNullException("Carrier");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Carrier));
+            }
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Email));
+            }
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Name));
+            }
+            if ((Phone == null)) {
+                throw new global::System.ArgumentNullException("Phone");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Phone));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1036,7 +1210,25 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserName, string Password, string Role, string AccountLocked, int Original_Id, string Original_UserName, string Original_Password, string Original_Role, string Original_AccountLocked, int Id) {
+        public virtual int Update(
+                    string UserName, 
+                    string Password, 
+                    string Role, 
+                    string AccountLocked, 
+                    string Carrier, 
+                    string Email, 
+                    string Name, 
+                    string Phone, 
+                    int Original_Id, 
+                    string Original_UserName, 
+                    string Original_Password, 
+                    string Original_Role, 
+                    string Original_AccountLocked, 
+                    string Original_Carrier, 
+                    string Original_Email, 
+                    string Original_Name, 
+                    string Original_Phone, 
+                    int Id) {
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
@@ -1061,32 +1253,80 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(AccountLocked));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            if ((Carrier == null)) {
+                throw new global::System.ArgumentNullException("Carrier");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Carrier));
+            }
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Email));
+            }
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Name));
+            }
+            if ((Phone == null)) {
+                throw new global::System.ArgumentNullException("Phone");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Phone));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
             if ((Original_UserName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_UserName));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_UserName));
             }
             if ((Original_Password == null)) {
                 throw new global::System.ArgumentNullException("Original_Password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Password));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Password));
             }
             if ((Original_Role == null)) {
                 throw new global::System.ArgumentNullException("Original_Role");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Role));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Role));
             }
             if ((Original_AccountLocked == null)) {
                 throw new global::System.ArgumentNullException("Original_AccountLocked");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_AccountLocked));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_AccountLocked));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Id));
+            if ((Original_Carrier == null)) {
+                throw new global::System.ArgumentNullException("Original_Carrier");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Carrier));
+            }
+            if ((Original_Email == null)) {
+                throw new global::System.ArgumentNullException("Original_Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Email));
+            }
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Name));
+            }
+            if ((Original_Phone == null)) {
+                throw new global::System.ArgumentNullException("Original_Phone");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Phone));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1107,8 +1347,25 @@ SELECT Id, UserName, Password, Role, AccountLocked FROM LoginData WHERE (Id = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserName, string Password, string Role, string AccountLocked, int Original_Id, string Original_UserName, string Original_Password, string Original_Role, string Original_AccountLocked) {
-            return this.Update(UserName, Password, Role, AccountLocked, Original_Id, Original_UserName, Original_Password, Original_Role, Original_AccountLocked, Original_Id);
+        public virtual int Update(
+                    string UserName, 
+                    string Password, 
+                    string Role, 
+                    string AccountLocked, 
+                    string Carrier, 
+                    string Email, 
+                    string Name, 
+                    string Phone, 
+                    int Original_Id, 
+                    string Original_UserName, 
+                    string Original_Password, 
+                    string Original_Role, 
+                    string Original_AccountLocked, 
+                    string Original_Carrier, 
+                    string Original_Email, 
+                    string Original_Name, 
+                    string Original_Phone) {
+            return this.Update(UserName, Password, Role, AccountLocked, Carrier, Email, Name, Phone, Original_Id, Original_UserName, Original_Password, Original_Role, Original_AccountLocked, Original_Carrier, Original_Email, Original_Name, Original_Phone, Original_Id);
         }
     }
     
