@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cyber_353_Project
 {
@@ -41,6 +42,26 @@ namespace Cyber_353_Project
                     break;
 
             }
+        }
+
+        private void GenerateReportBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerateNetworkReportBtn_Click(object sender, EventArgs e)
+        {
+            // TODO: Add file that will keep a log of the network activity, along with timestamps
+            try
+            {
+                StreamReader inputFile = File.OpenText("NetworkActivity.txt");
+                // this is a placeholder file, will update later once full functionality exists 
+            }
+            catch
+            {
+                MessageBox.Show("Could not open the network log");
+            }
+           
         }
     }
 }

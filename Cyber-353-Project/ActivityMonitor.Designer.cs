@@ -32,6 +32,7 @@ namespace Cyber_353_Project
             this.SelectDirBtn = new System.Windows.Forms.Button();
             this.GenerateReportBtn = new System.Windows.Forms.Button();
             this.ActivityScanDirectory = new System.Windows.Forms.FolderBrowserDialog();
+            this.GenerateNetworkReportBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SelectDirBtn
@@ -50,14 +51,26 @@ namespace Cyber_353_Project
             this.GenerateReportBtn.Name = "GenerateReportBtn";
             this.GenerateReportBtn.Size = new System.Drawing.Size(147, 58);
             this.GenerateReportBtn.TabIndex = 1;
-            this.GenerateReportBtn.Text = "Generate Report";
+            this.GenerateReportBtn.Text = "Generate File Activity Report";
             this.GenerateReportBtn.UseVisualStyleBackColor = true;
+            this.GenerateReportBtn.Click += new System.EventHandler(this.GenerateReportBtn_Click);
+            // 
+            // GenerateNetworkReportBtn
+            // 
+            this.GenerateNetworkReportBtn.Location = new System.Drawing.Point(320, 13);
+            this.GenerateNetworkReportBtn.Name = "GenerateNetworkReportBtn";
+            this.GenerateNetworkReportBtn.Size = new System.Drawing.Size(147, 58);
+            this.GenerateNetworkReportBtn.TabIndex = 2;
+            this.GenerateNetworkReportBtn.Text = "Generate Network Activity Report";
+            this.GenerateNetworkReportBtn.UseVisualStyleBackColor = true;
+            this.GenerateNetworkReportBtn.Click += new System.EventHandler(this.GenerateNetworkReportBtn_Click);
             // 
             // ActivityMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GenerateNetworkReportBtn);
             this.Controls.Add(this.GenerateReportBtn);
             this.Controls.Add(this.SelectDirBtn);
             this.Name = "ActivityMonitor";
@@ -71,5 +84,6 @@ namespace Cyber_353_Project
         private System.Windows.Forms.Button SelectDirBtn;
         private System.Windows.Forms.Button GenerateReportBtn;
         private System.Windows.Forms.FolderBrowserDialog ActivityScanDirectory;
+        private System.Windows.Forms.Button GenerateNetworkReportBtn;
     }
 }
