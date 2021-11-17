@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using nClam;
+
 
 namespace Cyber_353_Project
 {
@@ -21,7 +21,7 @@ namespace Cyber_353_Project
 
         private void ScanDirectoryBtn_Click(object sender, EventArgs e)
         {
-            ClamClient clam = new ClamClient("localhost", 3310);
+            
 
             switch (SelectDirectory.ShowDialog())
             // opens a Windows file dialog to select a file path or cancel operation
@@ -34,21 +34,7 @@ namespace Cyber_353_Project
 
                     foreach(FileInfo f in files)
                     {
-                        var scanResult = await clam.ScanFileOnServerAsync("C:\\test.txt");  //any file you would like!
-
-                        switch (scanResult.Result)
-                        {
-                            case ClamScanResults.Clean:
-                                Console.WriteLine("The file is clean!");
-                                break;
-                            case ClamScanResults.VirusDetected:
-                                Console.WriteLine("Virus Found!");
-                                Console.WriteLine("Virus name: {0}", scanResult.InfectedFiles.First().VirusName);
-                                break;
-                            case ClamScanResults.Error:
-                                Console.WriteLine("Woah an error occured! Error: {0}", scanResult.RawResult);
-                                break;
-                        }
+                        Utils.scan_FileAsync(f.Name);
                     }
                     
                     break;
