@@ -28,11 +28,10 @@ namespace Cyber_353_Project
                 RdpClient.UserName = DestUserNameTxtB.Text;
                 RdpClient.AdvancedSettings2.ClearTextPassword = DestPassTxtB.Text;
                 RdpClient.AdvancedSettings7.EnableCredSspSupport = true;
-                // TODO: learn how password is encrypted when passed to RDP
             }
             catch
             {
-                //TODO: Figure out how to catch errors like invalid password, username, etc.
+                MessageBox.Show("Error in connection- please try again and ensure all values are correct");
             }
 
             RdpClient.Connect();

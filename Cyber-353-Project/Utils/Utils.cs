@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +50,18 @@ namespace Cyber_353_Project
             }
 
             return true;
+        }
+
+        public static Boolean LoginAttemptRecord(string username)
+        {
+            string hostname = Dns.GetHostName();
+            string ip = Dns.GetHostEntry(hostname).AddressList[0].ToString();
+            StreamWriter loginAttemptLog = File.AppendText("loginattempts.txt");
+
+            loginAttemptLog.WriteLine("Login by user " + username + " attempted from IP " + ip);
+            loginAttemptLog.Close();
+            return true;
+            
         }
     }
 }

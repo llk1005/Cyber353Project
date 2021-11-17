@@ -34,6 +34,7 @@ namespace Cyber_353_Project
             string encryptedPassword;
 
             encryptedPassword = Utils.sha256_hash(PasswordTxtBox.Text);
+            Utils.LoginAttemptRecord(UserTxtBox.Text);    // logs a login attempt from IP and with username
 
             // Checks if username and encrypted password are in database
             if (DatabaseManager.checkLoginInfo(UserTxtBox.Text, encryptedPassword))
@@ -43,7 +44,9 @@ namespace Cyber_353_Project
                 SecondFA fa2 = new SecondFA(DatabaseManager.getEmail(uid));
                 fa2.Show();
                 // This form is hidden
-                this.Hide();
+                this.Hide(); 
+
+
             }
             else
             {
