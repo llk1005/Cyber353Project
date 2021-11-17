@@ -43,6 +43,8 @@ namespace Cyber_353_Project
                 NetworkLog.WriteLine(" Bytes Sent: {0}", ni.GetIPv4Statistics().BytesSent);
                 NetworkLog.WriteLine(" Bytes Received: {0}", ni.GetIPv4Statistics().BytesReceived);
             }
+
+            NetworkLog.Close();
         }
 
         private void RDBtn_Click(object sender, EventArgs e)

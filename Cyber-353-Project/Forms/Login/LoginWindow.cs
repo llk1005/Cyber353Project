@@ -41,8 +41,12 @@ namespace Cyber_353_Project
             {
                 string uid = DatabaseManager.getUserId(UserTxtBox.Text, encryptedPassword);
                 // If so, 2FA form is started sending user's email as parameter
-                SecondFA fa2 = new SecondFA(DatabaseManager.getEmail(uid));
-                fa2.Show();
+                //   SecondFA fa2 = new SecondFA(DatabaseManager.getEmail(uid));
+                //   fa2.Show();
+
+                UserMainMenu main = new UserMainMenu();
+                main.Show();
+
                 // This form is hidden
                 this.Hide();  
 
