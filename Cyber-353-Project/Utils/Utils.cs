@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Globalization;
 using nClam;
 using System.IO;
 using System.Globalization;
@@ -63,6 +64,8 @@ namespace Cyber_353_Project
         {
             string hostname = Dns.GetHostName();
             string ip = Dns.GetHostEntry(hostname).AddressList[0].ToString();
+
+            DateTime logTime = DateTime.Now;
             StreamWriter loginAttemptLog = File.AppendText("loginattempts.txt");
 
             loginAttemptLog.WriteLine("Login by user " + username + " attempted from IP " + ip);
@@ -75,6 +78,18 @@ namespace Cyber_353_Project
             StreamWriter sw = File.AppendText(fileName);
             sw.WriteLine(message);
             sw.Close();
+        }
+
+        public static Boolean RdpAttemptRecord(string username, string destIP)
+        {
+            string hostname = Dns.GetHostName();
+            string sourceIP = Dns.GetHostEntry(hostname).AddressList[0].ToString();
+
+
+            StreamWriter rdpConnectLog = File.AppendText("rdpattempts.txt");
+
+            rdpConnectLog.WriteLine("Connection to user " + username + " at IP " + destIP + " attempted by source IP " + sourceIP);
+            return true;
         }
     }
 }

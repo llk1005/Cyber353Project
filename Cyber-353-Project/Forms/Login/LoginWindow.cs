@@ -44,7 +44,7 @@ namespace Cyber_353_Project
                 SecondFA fa2 = new SecondFA(DatabaseManager.getEmail(uid));
                 fa2.Show();
                 // This form is hidden
-                this.Hide(); 
+                this.Hide();  
 
 
             }

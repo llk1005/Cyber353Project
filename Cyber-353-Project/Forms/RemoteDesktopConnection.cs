@@ -27,14 +27,19 @@ namespace Cyber_353_Project
                 RdpClient.Server = DestIPTxtB.Text;
                 RdpClient.UserName = DestUserNameTxtB.Text;
                 RdpClient.AdvancedSettings2.ClearTextPassword = DestPassTxtB.Text;
-                RdpClient.AdvancedSettings7.EnableCredSspSupport = true;
+                RdpClient.AdvancedSettings7.EnableCredSspSupport = true;                
             }
             catch
             {
                 MessageBox.Show("Error in connection- please try again and ensure all values are correct");
             }
-
+            finally // always want the logging function to execute, even if connection fails
+            {
+                Utils.RdpAttemptRecord(DestUserNameTxtB.Text, DestIPTxtB.Text);
+            }
+            
             RdpClient.Connect();
+
 
         }
 
