@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
 
 
 namespace Cyber_353_Project
@@ -32,9 +33,14 @@ namespace Cyber_353_Project
                     FileInfo[] files = d.GetFiles();
                     SelectedDirLbl.Text = "Selected Directory: " + pathName;
 
+                    DateTime localDate = DateTime.Now;
+                    string logName = "Scan " + localDate.ToString("yyyyMMddhhmmss") + ".txt";
+
+                    Console.WriteLine(logName);
+
                     foreach(FileInfo f in files)
                     {
-                        Utils.scan_FileAsync(f.FullName);
+                        Utils.scan_FileAsync(f.FullName, logName);
                         if (ScanBar.Value < 100)
                         {
                             ScanBar.Value += 5;
