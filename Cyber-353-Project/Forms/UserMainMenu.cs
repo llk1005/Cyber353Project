@@ -31,8 +31,10 @@ namespace Cyber_353_Project
             {
                 return;
             }
+            DateTime scanTime = DateTime.Now;
+            string filename = "networkLog" + scanTime.ToString("yyyyMMddhhmmss") + ".txt";
 
-            StreamWriter NetworkLog = new StreamWriter("NetworkLog.txt");
+            StreamWriter NetworkLog = File.AppendText(filename);
 
             NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
 

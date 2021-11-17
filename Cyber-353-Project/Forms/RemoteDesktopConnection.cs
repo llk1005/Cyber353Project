@@ -27,7 +27,8 @@ namespace Cyber_353_Project
                 RdpClient.Server = DestIPTxtB.Text;
                 RdpClient.UserName = DestUserNameTxtB.Text;
                 RdpClient.AdvancedSettings2.ClearTextPassword = DestPassTxtB.Text;
-                RdpClient.AdvancedSettings7.EnableCredSspSupport = true;                
+                RdpClient.AdvancedSettings7.EnableCredSspSupport = true;
+                RdpClient.Connect();
             }
             catch
             {
@@ -38,7 +39,7 @@ namespace Cyber_353_Project
                 Utils.RdpAttemptRecord(DestUserNameTxtB.Text, DestIPTxtB.Text);
             }
             
-            RdpClient.Connect();
+            
 
 
         }

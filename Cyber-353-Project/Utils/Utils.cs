@@ -60,10 +60,11 @@ namespace Cyber_353_Project
             return true;
         }
 
-        public static Boolean LoginAttemptRecord(string username)
+        public static bool LoginAttemptRecord(string username)
         {
             string hostname = Dns.GetHostName();
             string ip = Dns.GetHostEntry(hostname).AddressList[0].ToString();
+            // currently records IPv6, but future plan is to return IPv4
 
             DateTime logTime = DateTime.Now;
             string filename = "loginattempt" + logTime.ToString("yyyyMMddhhmmss") + ".txt";
@@ -81,7 +82,7 @@ namespace Cyber_353_Project
             sw.Close();
         }
 
-        public static Boolean RdpAttemptRecord(string username, string destIP)
+        public static bool RdpAttemptRecord(string username, string destIP)
         {
             string hostname = Dns.GetHostName();
             string sourceIP = Dns.GetHostEntry(hostname).AddressList[0].ToString();
