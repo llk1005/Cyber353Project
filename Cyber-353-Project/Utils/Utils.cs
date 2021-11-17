@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Globalization;
 using nClam;
-using System.IO;
-using System.Globalization;
 
 namespace Cyber_353_Project
 {
