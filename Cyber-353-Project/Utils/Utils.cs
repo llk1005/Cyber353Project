@@ -40,8 +40,8 @@ namespace Cyber_353_Project
                 case ClamScanResults.VirusDetected:
                     Console.WriteLine("Virus Found!");
                     Console.WriteLine("Virus name: {0}", scanResult.InfectedFiles.First().VirusName);
+                    NotificationHandler.SendFullNotification("Virus has been detected: \n\n\nVirus name: " + scanResult.InfectedFiles.First().VirusName + "\n\n\nDirectory: " + fileName);
                     return false;
-                    //break;
                 case ClamScanResults.Error:
                     Console.WriteLine("Woah an error occured! Error: {0}", scanResult.RawResult);
                     break;

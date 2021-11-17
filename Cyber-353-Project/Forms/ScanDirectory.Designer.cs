@@ -39,10 +39,10 @@ namespace Cyber_353_Project
             // SelectedDirLbl
             // 
             this.SelectedDirLbl.AutoSize = true;
-            this.SelectedDirLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedDirLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedDirLbl.Location = new System.Drawing.Point(12, 9);
             this.SelectedDirLbl.Name = "SelectedDirLbl";
-            this.SelectedDirLbl.Size = new System.Drawing.Size(251, 25);
+            this.SelectedDirLbl.Size = new System.Drawing.Size(158, 16);
             this.SelectedDirLbl.TabIndex = 3;
             this.SelectedDirLbl.Text = "Selected Directory: None";
             // 

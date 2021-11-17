@@ -40,13 +40,13 @@ namespace Cyber_353_Project
                 MailMessage mail = new MailMessage();
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("llkirkwood119@gmail.com");
+                mail.From = new MailAddress("fullemail");
                 mail.To.Add(email);
                 mail.Subject = "Authentication Code";
                 mail.Body = "Hello, \n\nYour authentication code is: " + number.ToString();
 
                 smtpServer.Port = 587;
-                smtpServer.Credentials = new System.Net.NetworkCredential("llkirkwood119", "L0g@n119");
+                smtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
                 smtpServer.EnableSsl = true;
 
                 smtpServer.Send(mail);

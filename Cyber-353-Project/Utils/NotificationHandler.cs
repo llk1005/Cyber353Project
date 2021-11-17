@@ -11,9 +11,9 @@ namespace Cyber_353_Project
     static class NotificationHandler
     {
 
-        private static string from = "llkirkwood119@gmail.com";
-        private static string user = "llkirkwood119";
-        private static string pass = "L0g@n119";
+        private static string from = "email";
+        private static string user = "username";
+        private static string pass = "password";
 
         public static bool SendMessage(string message)
         {

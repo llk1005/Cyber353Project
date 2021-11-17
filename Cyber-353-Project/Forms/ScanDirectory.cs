@@ -34,8 +34,13 @@ namespace Cyber_353_Project
 
                     foreach(FileInfo f in files)
                     {
-                        Utils.scan_FileAsync(f.Name);
+                        Utils.scan_FileAsync(f.FullName);
+                        if (ScanBar.Value < 100)
+                        {
+                            ScanBar.Value += 5;
+                        }
                     }
+                    ScanBar.Value = 100;
                     
                     break;
                 case DialogResult.Cancel:   // the user decided to cancel the operation
