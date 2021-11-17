@@ -60,7 +60,6 @@ namespace Cyber_353_Project
             return true;
         }
 
-<<<<<<< Updated upstream
         public static Boolean LoginAttemptRecord(string username)
         {
             string hostname = Dns.GetHostName();
@@ -73,14 +72,13 @@ namespace Cyber_353_Project
             loginAttemptLog.WriteLine("Login by user " + username + " attempted from IP " + ip);
             loginAttemptLog.Close();
             return true;
+        }
             
-=======
         public static void writeToLog(string fileName, string message)
         {
             StreamWriter sw = File.AppendText(fileName);
             sw.WriteLine(message);
             sw.Close();
->>>>>>> Stashed changes
         }
 
         public static Boolean RdpAttemptRecord(string username, string destIP)
