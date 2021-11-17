@@ -48,9 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="nClam, Version=6.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nClam.6.0.1\lib\netstandard2.0\nClam.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,58 +68,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityMonitor.cs">
+    <Compile Include="Forms\ScanDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActivityMonitor.Designer.cs">
-      <DependentUpon>ActivityMonitor.cs</DependentUpon>
+    <Compile Include="Forms\ScanDirectory.Designer.cs">
+      <DependentUpon>ScanDirectory.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NotificationTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NotificationTest.Designer.cs">
+      <DependentUpon>NotificationTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\DatabaseManager.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="LoginDataView.cs">
+    <Compile Include="Forms\Login\SecondFA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDataView.Designer.cs">
-      <DependentUpon>LoginDataView.cs</DependentUpon>
+    <Compile Include="Forms\Login\SecondFA.Designer.cs">
+      <DependentUpon>SecondFA.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginWindow.cs">
+    <Compile Include="Forms\Login\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginWindow.Designer.cs">
+    <Compile Include="Forms\Login\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUser.cs">
+    <Compile Include="Forms\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="Forms\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotificationHandler.cs" />
-    <Compile Include="SecretMenu.cs">
+    <Compile Include="Utils\NotificationHandler.cs" />
+    <Compile Include="Forms\SecretMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SecretMenu.Designer.cs">
+    <Compile Include="Forms\SecretMenu.Designer.cs">
       <DependentUpon>SecretMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoteDesktopConnection.cs">
+    <Compile Include="Forms\RemoteDesktopConnection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoteDesktopConnection.Designer.cs">
+    <Compile Include="Forms\RemoteDesktopConnection.Designer.cs">
       <DependentUpon>RemoteDesktopConnection.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginDataView.resx">
-      <DependentUpon>LoginDataView.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScanDirectory.resx">
+      <DependentUpon>ScanDirectory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginWindow.resx">
+    <EmbeddedResource Include="Forms\Login\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoteDesktopConnection.resx">
+    <EmbeddedResource Include="Forms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotificationTest.resx">
+      <DependentUpon>NotificationTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteDesktopConnection.resx">
       <DependentUpon>RemoteDesktopConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -125,20 +151,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SecretMenu.resx">
+    <EmbeddedResource Include="Forms\Login\SecondFA.resx">
+      <DependentUpon>SecondFA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SecretMenu.resx">
       <DependentUpon>SecretMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Database1DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Database1DataSet.xss">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -185,10 +218,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
   </ItemGroup>
