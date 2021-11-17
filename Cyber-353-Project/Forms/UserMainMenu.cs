@@ -40,8 +40,8 @@ namespace Cyber_353_Project
 
             foreach (NetworkInterface ni in interfaces)
             {
-                NetworkLog.WriteLine(" Bytes Sent: {0}", ni.GetIPv4Statistics().BytesSent);
-                NetworkLog.WriteLine(" Bytes Received: {0}", ni.GetIPv4Statistics().BytesReceived);
+                NetworkLog.WriteLine(" Bytes Sent: {0}", ni.GetIPv4Statistics().BytesSent + ni.ToString());
+                NetworkLog.WriteLine(" Bytes Received: {0}", ni.GetIPv4Statistics().BytesReceived + ni.ToString());
             }
         }
 
