@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using nClam;
+using System.IO;
+using System.Globalization;
 
 namespace Cyber_353_Project
 {
@@ -28,30 +30,36 @@ namespace Cyber_353_Project
             return sb.ToString();
         }
 
-        public static async Task<bool> scan_FileAsync(string fileName)
+        public static async Task<bool> scan_FileAsync(string fileName, string logName)
         {
             ClamClient clam = new ClamClient("localhost", 3310);
 
-            var scanResult = await clam.ScanFileOnServerAsync(fileName);  //any file you would like!
+            var scanResult = await clam.ScanFileOnServerAsync(fileName);
+
+            DateTime localTime = DateTime.Now;
 
             switch (scanResult.Result)
             {
                 case ClamScanResults.Clean:
                     Console.WriteLine("The file is clean!");
+                    writeToLog(logName, "Scanned: " + fileName + "\nNo Virus Found" + " " + localTime);
                     break;
                 case ClamScanResults.VirusDetected:
                     Console.WriteLine("Virus Found!");
                     Console.WriteLine("Virus name: {0}", scanResult.InfectedFiles.First().VirusName);
-                    NotificationHandler.SendFullNotification("Virus has been detected: \n\n\nVirus name: " + scanResult.InfectedFiles.First().VirusName + "\n\n\nDirectory: " + fileName);
+                    writeToLog(logName, "Virus found at: " + fileName + "\nVirus name: " + scanResult.InfectedFiles.First().VirusName);
+                    NotificationHandler.SendFullNotification("Virus has been detected: \n\n\nVirus name: " + scanResult.InfectedFiles.First().VirusName + "\n\n\nDirectory: " + fileName + " " + localTime);
                     return false;
                 case ClamScanResults.Error:
                     Console.WriteLine("Woah an error occured! Error: {0}", scanResult.RawResult);
+                    writeToLog(logName, "Error scanning: " + fileName + "\nError: " + scanResult.RawResult + " " + localTime);
                     break;
             }
 
             return true;
         }
 
+<<<<<<< Updated upstream
         public static Boolean LoginAttemptRecord(string username)
         {
             string hostname = Dns.GetHostName();
@@ -62,6 +70,13 @@ namespace Cyber_353_Project
             loginAttemptLog.Close();
             return true;
             
+=======
+        public static void writeToLog(string fileName, string message)
+        {
+            StreamWriter sw = File.AppendText(fileName);
+            sw.WriteLine(message);
+            sw.Close();
+>>>>>>> Stashed changes
         }
     }
 }
