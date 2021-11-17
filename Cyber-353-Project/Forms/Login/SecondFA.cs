@@ -62,7 +62,10 @@ namespace Cyber_353_Project
         {
             if (AuthCodeTxtBox.Text == number.ToString())
             {
-                
+                UserMainMenu menu = new UserMainMenu();
+
+                menu.Show();
+
                 this.Close();
             }
             else

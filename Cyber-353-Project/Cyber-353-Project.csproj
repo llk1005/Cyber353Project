@@ -68,17 +68,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\UserMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserMainMenu.Designer.cs">
+      <DependentUpon>UserMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScanDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ScanDirectory.Designer.cs">
       <DependentUpon>ScanDirectory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NotificationTest.cs">
       <SubType>Form</SubType>
@@ -133,14 +133,14 @@
     <EmbeddedResource Include="Forms\Login\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NotificationTest.resx">
       <DependentUpon>NotificationTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemoteDesktopConnection.resx">
       <DependentUpon>RemoteDesktopConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserMainMenu.resx">
+      <DependentUpon>UserMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

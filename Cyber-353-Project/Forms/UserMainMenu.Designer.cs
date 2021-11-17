@@ -1,7 +1,7 @@
 ﻿
-namespace Cyber_353_Project.Forms
+namespace Cyber_353_Project
 {
-    partial class MainMenu
+    partial class UserMainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -78,7 +78,6 @@ namespace Cyber_353_Project.Forms
             this.Name = "MainMenu";
             this.Text = "Form1";
             this.ResumeLayout(false);
-
         }
 
         #endregion

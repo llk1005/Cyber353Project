@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
+using System.IO;
 
-namespace Cyber_353_Project.Forms
+namespace Cyber_353_Project
 {
-    public partial class MainMenu : Form
+    public partial class UserMainMenu : Form
     {
-        public MainMenu()
+        public UserMainMenu()
         {
             InitializeComponent();
         }
