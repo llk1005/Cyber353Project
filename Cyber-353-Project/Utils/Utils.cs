@@ -67,6 +67,7 @@ namespace Cyber_353_Project
             string ip = Dns.GetHostEntry(hostname).AddressList[0].ToString();
 
             DateTime logTime = DateTime.Now;
+            string filename = "loginattempt" + logTime.ToString("yyyyMMddhhmmss") + ".txt";
             StreamWriter loginAttemptLog = File.AppendText("loginattempts.txt");
 
             loginAttemptLog.WriteLine("Login by user " + username + " attempted from IP " + ip);
@@ -86,9 +87,11 @@ namespace Cyber_353_Project
         {
             string hostname = Dns.GetHostName();
             string sourceIP = Dns.GetHostEntry(hostname).AddressList[0].ToString();
+            DateTime logTime = DateTime.Now;
 
+            string filename = "rdpattempt" + logTime.ToString("yyyyMMddhhmmss") + ".txt";
 
-            StreamWriter rdpConnectLog = File.AppendText("rdpattempts.txt");
+            StreamWriter rdpConnectLog = File.AppendText(filename);
 
             rdpConnectLog.WriteLine("Connection to user " + username + " at IP " + destIP + " attempted by source IP " + sourceIP);
             return true;
