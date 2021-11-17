@@ -41,7 +41,10 @@ namespace Cyber_353_Project
                         }
                     }
                     ScanBar.Value = 100;
-                    
+
+                    MessageBox.Show("Scan Complete!");
+
+                    this.Close();
                     break;
                 case DialogResult.Cancel:   // the user decided to cancel the operation
                     MessageBox.Show("The scan operation was cancelled.");
