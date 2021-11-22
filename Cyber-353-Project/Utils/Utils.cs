@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Globalization;
 using nClam;
+using System.Net.NetworkInformation;
 
 namespace Cyber_353_Project
 {
@@ -27,6 +28,29 @@ namespace Cyber_353_Project
                 }
             }
             return sb.ToString();
+        }
+
+        public static bool networkAnalysis()
+        {
+            if (!NetworkInterface.GetIsNetworkAvailable())  // if no network is connected, then exit
+            {
+                return false;
+            }
+            DateTime scanTime = DateTime.Now;
+            string filename = "networkLog" + scanTime.ToString("yyyyMMddhhmmss") + ".txt";
+
+            StreamWriter NetworkLog = File.AppendText(filename);
+
+            NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+
+            foreach (NetworkInterface ni in interfaces)
+            {
+                NetworkLog.WriteLine(" Bytes Sent: {0}", ni.GetIPv4Statistics().BytesSent); // TODO: Figure out how to log the IP address in the file
+                NetworkLog.WriteLine(" Bytes Received: {0}", ni.GetIPv4Statistics().BytesReceived);
+            }
+
+            NetworkLog.Close();
+            return true;
         }
 
         public static async Task<bool> scan_FileAsync(string fileName, string logName)

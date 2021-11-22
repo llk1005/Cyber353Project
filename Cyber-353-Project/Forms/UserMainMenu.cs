@@ -17,6 +17,36 @@ namespace Cyber_353_Project
         public UserMainMenu()
         {
             InitializeComponent();
+
+            welcomeLbl.Text += "\n" + SessionHandler.getName();
+            ScanBtn.Hide();
+            NetworkBtn.Hide();
+            RDBtn.Hide();
+            AddUser.Hide();
+
+            if (SessionHandler.getRole() == "Super User")
+            {
+                ScanBtn.Show();
+                NetworkBtn.Show();
+                RDBtn.Show();
+            }
+            else if (SessionHandler.getRole() == "Admin")
+            {
+                NetworkBtn.Show();
+                RDBtn.Show();
+            }
+            else if (SessionHandler.getRole() == "Security Personnel")
+            {
+                ScanBtn.Show();
+            }
+            else if (SessionHandler.getRole() == "System Administrator")
+            {
+                NetworkBtn.Show();
+            }
+            else if (SessionHandler.getRole() == "IT")
+            {
+                AddUser.Show();
+            }
         }
 
         private void ScanBtn_Click(object sender, EventArgs e)
@@ -27,30 +57,19 @@ namespace Cyber_353_Project
 
         private void NetworkBtn_Click(object sender, EventArgs e)
         {
-            if (!NetworkInterface.GetIsNetworkAvailable())  // if no network is connected, then exit
-            {
-                return;
-            }
-            DateTime scanTime = DateTime.Now;
-            string filename = "networkLog" + scanTime.ToString("yyyyMMddhhmmss") + ".txt";
-
-            StreamWriter NetworkLog = File.AppendText(filename);
-
-            NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
-
-            foreach (NetworkInterface ni in interfaces)
-            {
-                NetworkLog.WriteLine(" Bytes Sent: {0}", ni.GetIPv4Statistics().BytesSent); // TODO: Figure out how to log the IP address in the file
-                NetworkLog.WriteLine(" Bytes Received: {0}", ni.GetIPv4Statistics().BytesReceived);
-            }
-
-            NetworkLog.Close();
+            Utils.networkAnalysis();
         }
 
         private void RDBtn_Click(object sender, EventArgs e)
         {
             RemoteDesktopConnection rdp = new RemoteDesktopConnection();
             rdp.Show();
+        }
+
+        private void AddUser_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.Show();
         }
     }
 }

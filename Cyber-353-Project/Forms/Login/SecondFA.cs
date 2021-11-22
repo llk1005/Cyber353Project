@@ -13,7 +13,7 @@ namespace Cyber_353_Project
 {
     public partial class SecondFA : Form
     {
-        private string email;
+        private string uid;
         private int number;
 
         /*
@@ -21,15 +21,14 @@ namespace Cyber_353_Project
          * Takes email as parameter
          * On load, sends code to user's email
          */
-        public SecondFA(string email)
+        public SecondFA(string email, string uid)
         {
             InitializeComponent();
 
             // Initialize instance of Random class
             Random rand = new Random();
 
-            // Sets email to email parameter
-            this.email = email;
+            this.uid = uid;
             
             // Generates random number between 100000 and 999999
             number = rand.Next(100000, 1000000);
@@ -40,13 +39,13 @@ namespace Cyber_353_Project
                 MailMessage mail = new MailMessage();
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("fullemail");
+                mail.From = new MailAddress("cyber353notificationsystem@gmail.com");
                 mail.To.Add(email);
                 mail.Subject = "Authentication Code";
                 mail.Body = "Hello, \n\nYour authentication code is: " + number.ToString();
 
                 smtpServer.Port = 587;
-                smtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
+                smtpServer.Credentials = new System.Net.NetworkCredential("cyber353notificationsystem", "Cyb3r353-$");
                 smtpServer.EnableSsl = true;
 
                 smtpServer.Send(mail);
@@ -63,6 +62,8 @@ namespace Cyber_353_Project
             if (AuthCodeTxtBox.Text == number.ToString())
             {
                 UserMainMenu menu = new UserMainMenu();
+
+                SessionHandler.Start(uid);
 
                 menu.Show();
 

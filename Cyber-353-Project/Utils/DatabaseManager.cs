@@ -114,7 +114,7 @@ namespace Cyber_353_Project
             
         }
 
-        // Gets the email of the user
+        // Gets the uid of the user
         public static string getUserId(string userName, string password)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
@@ -136,6 +136,74 @@ namespace Cyber_353_Project
                 return reader[0].ToString();
             }
         }
+
+        // Gets the user name of the user
+        public static string getUserName(string uid)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "SELECT * FROM LoginData WHERE Id = @Id;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@Id", uid);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                return reader[1].ToString();
+            }
+        }
+
+        // Gets the role of the user
+        public static string getRole(string uid)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "SELECT * FROM LoginData WHERE Id = @Id;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@Id", uid);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                return reader[3].ToString();
+            }
+        }
+
+        // Gets the name of the user
+        public static string getName(string uid)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "SELECT * FROM LoginData WHERE Id = @Id;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@Id", uid);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                return reader[5].ToString();
+            }
+        }
+
+
 
         // Gets the email of the user
         public static string getEmail(string uid)
@@ -178,6 +246,28 @@ namespace Cyber_353_Project
                 reader.Read();
 
                 return reader[7].ToString();
+            }
+        }
+
+        // Gets the carrier of the user
+        public static string getCarrier(string uid)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Cyber_353_Project.Properties.Settings.Database1ConnectionString"].ConnectionString;
+
+            string query = "SELECT * FROM LoginData WHERE Id = @Id;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@Id", uid);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                return reader[8].ToString();
             }
         }
     }    
