@@ -90,7 +90,7 @@ namespace Cyber_353_Project
 
             DateTime logTime = DateTime.Now;
             string filename = "loginattempt" + logTime.ToString("yyyyMMddhhmmss") + ".txt";
-            StreamWriter loginAttemptLog = File.AppendText("loginattempts.txt");
+            StreamWriter loginAttemptLog = File.AppendText(filename);
 
             loginAttemptLog.WriteLine("Login by user " + username + " attempted from IP " + ip);
             loginAttemptLog.Close();
