@@ -30,7 +30,7 @@ namespace Cyber_353_Project
             string carrier = "ATT";
             string encryptedPassword;
 
-            encryptedPassword = Utils.sha256_hash(PasswordBox.Text);
+            encryptedPassword = Utils.SHA256_hash(PasswordBox.Text);
 
             if (DatabaseManager.AddLoginData(UserNameBox.Text, encryptedPassword, RoleBox.Text, NameBox.Text, EmailBox.Text, PhoneBox.Text, carrier))
             {

@@ -56,7 +56,7 @@ namespace Cyber_353_Project
             this.sendTxtBtn.TabIndex = 1;
             this.sendTxtBtn.Text = "Send Text";
             this.sendTxtBtn.UseVisualStyleBackColor = true;
-            this.sendTxtBtn.Click += new System.EventHandler(this.sendTxtBtn_Click);
+            this.sendTxtBtn.Click += new System.EventHandler(this.SendTxtBtn_Click);
             // 
             // sendEmailBtn
             // 
@@ -66,7 +66,7 @@ namespace Cyber_353_Project
             this.sendEmailBtn.TabIndex = 2;
             this.sendEmailBtn.Text = "Send Email";
             this.sendEmailBtn.UseVisualStyleBackColor = true;
-            this.sendEmailBtn.Click += new System.EventHandler(this.sendEmailBtn_Click);
+            this.sendEmailBtn.Click += new System.EventHandler(this.SendEmailBtn_Click);
             // 
             // label1
             // 

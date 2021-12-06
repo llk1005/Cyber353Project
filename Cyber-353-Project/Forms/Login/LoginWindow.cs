@@ -33,7 +33,7 @@ namespace Cyber_353_Project
             // Password is encrypted
             string encryptedPassword;
 
-            encryptedPassword = Utils.sha256_hash(PasswordTxtBox.Text);
+            encryptedPassword = Utils.SHA256_hash(PasswordTxtBox.Text);
             Utils.LoginAttemptRecord(UserTxtBox.Text);    // logs a login attempt from IP and with username
 
             // Checks if username and encrypted password are in database

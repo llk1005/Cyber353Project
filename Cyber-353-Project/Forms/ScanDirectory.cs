@@ -40,7 +40,7 @@ namespace Cyber_353_Project
 
                     foreach(FileInfo f in files)
                     {
-                        Utils.scan_FileAsync(f.FullName, logName);
+                        Utils.Scan_FileAsync(f.FullName, logName);
                         if (ScanBar.Value < 100)
                         {
                             ScanBar.Value += 5;

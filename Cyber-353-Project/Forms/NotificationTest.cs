@@ -17,7 +17,7 @@ namespace Cyber_353_Project
             InitializeComponent();
         }
 
-        private void sendTxtBtn_Click(object sender, EventArgs e)
+        private void SendTxtBtn_Click(object sender, EventArgs e)
         {
             if (NotificationHandler.SendText(MessageTxtBox.Text, PhoneTxtBox.Text, "ATT"))
             {
@@ -29,7 +29,7 @@ namespace Cyber_353_Project
             }
         }
 
-        private void sendEmailBtn_Click(object sender, EventArgs e)
+        private void SendEmailBtn_Click(object sender, EventArgs e)
         {
             if (NotificationHandler.SendEmail(MessageTxtBox.Text, EmailTxtBox.Text))
             {

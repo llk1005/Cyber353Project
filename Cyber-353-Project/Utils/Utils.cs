@@ -14,7 +14,7 @@ namespace Cyber_353_Project
 {
     static class Utils
     {
-        public static string sha256_hash(string password)
+        public static string SHA256_hash(string password)
         {
             StringBuilder sb = new StringBuilder();
             using (SHA256 hash = SHA256Managed.Create())
@@ -30,7 +30,7 @@ namespace Cyber_353_Project
             return sb.ToString();
         }
 
-        public static bool networkAnalysis()
+        public static bool NetworkAnalysis()
         {
             if (!NetworkInterface.GetIsNetworkAvailable())  // if no network is connected, then exit
             {
@@ -53,7 +53,7 @@ namespace Cyber_353_Project
             return true;
         }
 
-        public static async Task<bool> scan_FileAsync(string fileName, string logName)
+        public static async Task<bool> Scan_FileAsync(string fileName, string logName)
         {
             ClamClient clam = new ClamClient("localhost", 3310);
 
@@ -65,17 +65,17 @@ namespace Cyber_353_Project
             {
                 case ClamScanResults.Clean:
                     Console.WriteLine("The file is clean!");
-                    writeToLog(logName, "Scanned: " + fileName + "\nNo Virus Found" + " " + localTime);
+                    WriteToLog(logName, "Scanned: " + fileName + "\nNo Virus Found" + " " + localTime);
                     break;
                 case ClamScanResults.VirusDetected:
                     Console.WriteLine("Virus Found!");
                     Console.WriteLine("Virus name: {0}", scanResult.InfectedFiles.First().VirusName);
-                    writeToLog(logName, "Virus found at: " + fileName + "\nVirus name: " + scanResult.InfectedFiles.First().VirusName);
+                    WriteToLog(logName, "Virus found at: " + fileName + "\nVirus name: " + scanResult.InfectedFiles.First().VirusName);
                     NotificationHandler.SendFullNotification("Virus has been detected: \n\n\nVirus name: " + scanResult.InfectedFiles.First().VirusName + "\n\n\nDirectory: " + fileName + " " + localTime);
                     return false;
                 case ClamScanResults.Error:
                     Console.WriteLine("Woah an error occured! Error: {0}", scanResult.RawResult);
-                    writeToLog(logName, "Error scanning: " + fileName + "\nError: " + scanResult.RawResult + " " + localTime);
+                    WriteToLog(logName, "Error scanning: " + fileName + "\nError: " + scanResult.RawResult + " " + localTime);
                     break;
             }
 
@@ -97,7 +97,7 @@ namespace Cyber_353_Project
             return true;
         }
             
-        public static void writeToLog(string fileName, string message)
+        public static void WriteToLog(string fileName, string message)
         {
             StreamWriter sw = File.AppendText(fileName);
             sw.WriteLine(message);

@@ -57,7 +57,7 @@ namespace Cyber_353_Project
 
         private void NetworkBtn_Click(object sender, EventArgs e)
         {
-            Utils.networkAnalysis();
+            Utils.NetworkAnalysis();
         }
 
         private void RDBtn_Click(object sender, EventArgs e)
